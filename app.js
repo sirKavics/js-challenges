@@ -162,17 +162,75 @@ function progressiveSum(num) {
 
 console.log(progressiveSum(3));
 
-// Q6. Calculate the time
+// Q6. Calculate the time //
 
 function calcTime(seconds) {
   let timerMinutes = Math.floor(seconds / 60);
   let timerSeconds = seconds % 60;
 
   if (timerMinutes.toString().length === 1) {
-    timerMinutes = '0' + timerMinutes
+    timerMinutes = '0' + timerMinutes;
+  }
+
+  if (timerSeconds.toString().length === 1) {
+    timerSeconds = '0' + timerSeconds;
   }
 
   return timerMinutes + ':' + timerSeconds;
 }
 
-console.log(calcTime(70))
+console.log(calcTime(180));
+
+// Q7. Find the largest number //
+
+function getMax(arr) {
+  let max = arr[0];
+
+  for (let i = 0; i < arr.length; ++i) {
+    if (arr[i] > max) {
+      max = arr[i];
+    }
+  }
+  return max;
+}
+
+console.log(getMax([5, 100, 0]));
+
+// Q8. Reverse a string //
+
+//Incrementing for loop:
+
+function reverseString(str) {
+  let reversedString = '';
+  for (let i = 0; i < str.length; ++i) {
+    // this is how you loop through every character in a string
+    reversedString = str[i] + reversedString
+  }
+  return reversedString
+}
+
+console.log(reverseString('abcd'));
+
+//Decrementing for loop
+
+function reverseString(str) {
+  let reversedString = '';
+  for (let i = str.length - 1; i >= 0; --i) {
+    reversedString += str[i]
+  }
+  return reversedString
+}
+
+console.log(reverseString('This is cool'));
+
+//Array reverse property:
+
+function reverseString(str) {
+  return str.split('').reverse().join('');
+  //convert string to array: str.split('')
+  //can only be used in arrays : .reverse()
+  //convert back to string: .join('')
+}
+
+console.log(reverseString('Francisco'));
+
