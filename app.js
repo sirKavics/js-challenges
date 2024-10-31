@@ -283,3 +283,25 @@ function removeApples(arr) {
 
 console.log(removeApples(["Pear", "Strawberry", "Apple"]));
 
+//  Q11. Filter out all the falsy values  //
+
+//For loop:
+function filterFalsy(arr) {
+  let truthyArr = [];
+  for (let i = 0; i < arr.length; ++i) {
+    if (!!arr[i] === true) {
+      truthyArr.push(arr[i]);
+    }
+  }
+  return truthyArr;
+}
+
+console.log(filterFalsy(["", NaN, 10, null, undefined, "0"]));
+
+//Array 'filter':
+function filterFalsy(arr) {
+  return arr.filter((elem) => !!elem === true);
+}
+
+console.log(filterFalsy([false, true, "Francisco", NaN, 12]));
+
