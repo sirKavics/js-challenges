@@ -305,3 +305,31 @@ function filterFalsy(arr) {
 
 console.log(filterFalsy([false, true, "Francisco", NaN, 12]));
 
+//  Q12. Truthy to true, Falsy to false  //
+
+function convertToBoolean(arr) {
+  return arr.map((elem) => !!elem);
+}
+
+console.log(convertToBoolean([500, 0, "Francisco", "", []]));
+
+////////////////////// HARD CHALLENGES //////////////////////
+
+// Q1. Show rating //
+
+function showRating(rating) {
+  let ratings = "";
+  for (let i = 0; i < Math.floor(rating); ++i) {
+    ratings += "*";
+    if (i !== Math.floor(rating) - 1) {
+      ratings += " ";
+    }
+  }
+  if (!Number.isInteger(rating)) {
+    ratings += " .";
+  }
+  return ratings;
+}
+
+console.log(showRating(4.5));
+
