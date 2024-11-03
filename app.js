@@ -333,3 +333,26 @@ function showRating(rating) {
 
 console.log(showRating(4.5));
 
+// Q2. Sort by lowest to highest price //
+
+function sortLowToHigh(numbers) {
+  return numbers.sort((a, b) => a - b);
+}
+
+console.log(sortLowToHigh([20, 60, 0, 4, 30, -10, 50, 10]));
+
+// Q3. Sort by highest to lowest price //
+
+function sortHighToLow(numbers) {
+  return numbers.sort((a, b) => b.price - a.price);
+}
+
+console.log(
+  sortHighToLow([
+    { id: 1, price: 50 },
+    { id: 2, price: 30 },
+    { id: 3, price: 60 },
+    { id: 4, price: 10 },
+  ])
+);
+
