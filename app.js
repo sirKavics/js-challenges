@@ -164,3 +164,156 @@ function progressiveSum(num) {
 
 console.log(progressiveSum(3));
 
+//  Q6. Calculate the time  //
+
+function calcTime(seconds) {
+  let timerMinutes = Math.floor(seconds / 60);
+  let timerSeconds = seconds % 60;
+
+  if (timerMinutes.toString().length === 1) {
+    timerMinutes = "0" + timerMinutes;
+  }
+
+  if (timerSeconds.toString().length === 1) {
+    timerSeconds = "0" + timerSeconds;
+  }
+
+  return timerMinutes + ":" + timerSeconds;
+}
+
+console.log(calcTime(180));
+
+//  Q7. Find the largest number  //
+
+function getMax(arr) {
+  let max = arr[0];
+
+  for (let i = 0; i < arr.length; ++i) {
+    if (arr[i] > max) {
+      max = arr[i];
+    }
+  }
+  return max;
+}
+
+console.log(getMax([5, 100, 0]));
+
+//  Q8. Reverse a string  //
+
+//Incrementing for loop:
+
+function reverseString(str) {
+  let reversedString = "";
+  for (let i = 0; i < str.length; ++i) {
+    // this is how you loop through every character in a string
+    reversedString = str[i] + reversedString;
+  }
+  return reversedString;
+}
+
+console.log(reverseString("abcd"));
+
+//Decrementing for loop
+
+function reverseString(str) {
+  let reversedString = "";
+  for (let i = str.length - 1; i >= 0; --i) {
+    reversedString += str[i];
+  }
+  return reversedString;
+}
+
+console.log(reverseString("This is cool"));
+
+//Array reverse property:
+
+function reverseString(str) {
+  return str.split("").reverse().join("");
+  //convert string to array: str.split('')
+  //can only be used in arrays : .reverse()
+  //convert back to string: .join('')
+}
+
+console.log(reverseString("Francisco"));
+
+//  Q9. Turn every element in an array into 0  //
+
+//For loop:
+function convertToZeros(arr) {
+  let newArr = [];
+  for (let i = 0; i < arr.length - 1; ++i) {
+    newArr[i] = 0;
+  }
+  return newArr;
+}
+
+console.log(convertToZeros([1, 2, 3, 4, 5, 6]));
+
+//Array 'fill':
+function convertToZeros(arr) {
+  return new Array(arr.length).fill(0);
+}
+
+console.log(convertToZeros([1, 2, 3]));
+
+//Array 'map':
+function convertToZeros(arr) {
+  return arr.map((element) => 0);
+}
+
+console.log(convertToZeros([1, 2, 3, 4]));
+
+//  Q10. Filter out all the apples  //
+
+//For loop:
+function removeApples(arr) {
+  let noApples = [];
+  for (let i = 0; i < arr.length; ++i) {
+    if (arr[i] !== "Apple") {
+      noApples.push(arr[i]);
+      //add element to an array: .push()
+    }
+  }
+  return noApples;
+}
+
+console.log(removeApples(["Tomato", "Orange", "Apple", "Banana"]));
+
+//Array 'filter':
+function removeApples(arr) {
+  return arr.filter((element) => element !== "Apple");
+}
+
+console.log(removeApples(["Pear", "Strawberry", "Apple"]));
+
+//  Q11. Filter out all the falsy values  //
+
+//For loop:
+function filterFalsy(arr) {
+  let truthyArr = [];
+  for (let i = 0; i < arr.length; ++i) {
+    if (!!arr[i] === true) {
+      truthyArr.push(arr[i]);
+    }
+  }
+  return truthyArr;
+}
+
+console.log(filterFalsy(["", NaN, 10, null, undefined, "0"]));
+
+//Array 'filter':
+function filterFalsy(arr) {
+  return arr.filter((elem) => !!elem === true);
+}
+
+console.log(filterFalsy([false, true, "Francisco", NaN, 12]));
+
+//  Q12. Truthy to true, Falsy to false  //
+
+function convertToBoolean(arr) {
+  return arr.map((elem) => !!elem);
+}
+
+console.log(convertToBoolean([500, 0, "Francisco", "", []]));
+
+
