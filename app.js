@@ -303,8 +303,56 @@ function convertToZerosMap(arr) {
 console.log(convertToZerosMap([1, 2, 3, 4, 5]));
 
 //  Q10. Filter out all the apples  //
-// Given an array of fruits, if it is an apple remove it from the array.
+//  Given an array of fruits, if it is an apple remove it from the array.
 
+// FOR LOOP
+function removeApplesLoop(arr) {
+  let noApples = [];
+  for (let i = 0; i < arr.length; ++i) {
+    if (arr[i] !== 'Apple') {
+      noApples.push(arr[i]);
+    }
+  }
+  return noApples;
+}
+console.log(removeApplesLoop(['Banana', 'Apple', 'Orange', 'Apple']));
+
+// ARRAY 'FILTER'
+function removeApplesFilter(arr) {
+  return arr.filter(elem => {
+    return elem !== 'Apple'
+  })
+}
+console.log(removeApplesFilter(['Tomato', 'Orange', 'Apple']));
+
+//  Q11. Filter out all the falsy values  //
+//  Given an array of values, filter out all the falsy values and only return the truthy values.
+
+// FOR LOOP
+function filterOutFalsyLoop(arr) {
+  let truthyArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (!!arr[i] === true) {
+      truthyArr.push(arr[i]);
+    }
+  }
+  return truthyArr;
+}
+console.log(filterOutFalsyLoop(["", true, 0, null, 500, undefined, "0"]))
+
+// ARRAY 'FILTER'
+function filterOutFalsyFilter(arr) {
+  return arr.filter(elem => !!elem === true)
+}
+console.log(filterOutFalsyFilter(["", true, 0, null, 500, undefined, "0"]))
+
+////  Q12. Truthy to true, Falsy to false  //
+// Given an array of truthy and falsy values, return the same array of elements into it's boolean value.
+
+function convertToBoolean(arr) {
+  return arr.map(elem => !!elem)
+}
+console.log(convertToBoolean([500, 0, "Francisco", "", []]))
 
 ///////////////////////// HARD CHALLENGES /////////////////////////
 console.log("/////// HARD CHALLENGES ///////");
