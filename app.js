@@ -28,7 +28,8 @@ function hoursIntoSeconds(hour) {
 console.log(hoursIntoSeconds(2));
 
 //  Q3. Calculate the perimeter of a rectangle  //
-//  Create a function that takes length and width of a rectangule and return it's perimeter.
+//  Create a function that takes length and width of a rectangule and return 
+//  it's perimeter.
 
 function calcPerimeter(width, length) {
   return (width + length) * 2;
@@ -73,7 +74,8 @@ console.log(sumGreaterThan100(100, 10));
 console.log(sumGreaterThan100(50, 30));
 
 //  Q7. Less than or equal to zero  //
-//  Write a function that accepts a number and returns true if it is less then or equal to zero.
+//  Write a function that accepts a number and returns true if it is less then or 
+//  equal to zero.
 //  Otherwise return false.
 
 function lessThanOrEqualToZero(number) {
@@ -126,8 +128,9 @@ console.log(booleanInteger(5));
 console.log(booleanInteger(2));
 
 //  Q13. Check if a user is logged in AND subscribed  //
-//  Create a function that takes in  two strings. If the first string is equal to 'LOGGED_IN' AND
-//  the second string is equal to 'SUBSCRIBED' return true, otherwise return false.
+//  Create a function that takes in  two strings. If the first string is equal to 
+//  'LOGGED_IN' AND the second string is equal to 'SUBSCRIBED' return true, otherwise
+//  return false.
 
 function isLoggedInAndSubscribed(loggedIn, subscribed) {
   return loggedIn === "LOGGED_IN" && subscribed === "SUBSCRIBED";
@@ -137,8 +140,9 @@ console.log(isLoggedInAndSubscribed("LOGGED_IN", "UNSUBSCRIBED"));
 console.log(isLoggedInAndSubscribed("LOGGED_OUT", "SUBSCRIBED"));
 
 //  Q14. Check if a user is logged in OR subscribed  //
-//  Create a function that takes in  two strings. If the first string is equal to 'LOGGED_IN' OR
-//  the second string is equal to 'SUBSCRIBED' return true, otherwise return false.
+//  Create a function that takes in  two strings. If the first string is equal to 
+//  'LOGGED_IN' OR the second string is equal to 'SUBSCRIBED' return true, otherwise 
+//  return false.
 
 function isLoggedInOrSubscribed(loggedIn, subscribed) {
   return loggedIn === "LOGGED_IN" || subscribed === "SUBSCRIBED";
@@ -151,7 +155,8 @@ console.log(isLoggedInOrSubscribed("LOGGED_OUT", "UNSUBSCRIBED"));
 console.log("////// MEDIUM CHALLENGES //////");
 
 //  Q1. Falsy or truthy?  //
-//  Given two values, return the first one if it is falsy, otherwise return the second one. //
+//  Given two values, return the first one if it is falsy, otherwise return the 
+//  second one.
 
 function filterOutFalsy(elem1, elem2) {
   return !elem1 ? elem1 : elem2;
@@ -320,13 +325,14 @@ console.log(removeApplesLoop(['Banana', 'Apple', 'Orange', 'Apple']));
 // ARRAY 'FILTER'
 function removeApplesFilter(arr) {
   return arr.filter(elem => {
-    return elem !== 'Apple'
+    return elem !== 'Apple';
   })
 }
 console.log(removeApplesFilter(['Tomato', 'Orange', 'Apple']));
 
 //  Q11. Filter out all the falsy values  //
-//  Given an array of values, filter out all the falsy values and only return the truthy values.
+//  Given an array of values, filter out all the falsy values and only return
+//  the truthy values.
 
 // FOR LOOP
 function filterOutFalsyLoop(arr) {
@@ -338,21 +344,95 @@ function filterOutFalsyLoop(arr) {
   }
   return truthyArr;
 }
-console.log(filterOutFalsyLoop(["", true, 0, null, 500, undefined, "0"]))
+console.log(filterOutFalsyLoop(["", true, 0, null, 500, undefined, "0"]));
 
 // ARRAY 'FILTER'
 function filterOutFalsyFilter(arr) {
-  return arr.filter(elem => !!elem === true)
+  return arr.filter(elem => !!elem === true);
 }
-console.log(filterOutFalsyFilter(["", true, 0, null, 500, undefined, "0"]))
+console.log(filterOutFalsyFilter(["", true, 0, null, 500, undefined, "0"]));
 
-////  Q12. Truthy to true, Falsy to false  //
-// Given an array of truthy and falsy values, return the same array of elements into it's boolean value.
+//  Q12. Truthy to true, Falsy to false  //
+//  Given an array of truthy and falsy values, return the same array of elements 
+//  into it's boolean value.
 
 function convertToBoolean(arr) {
-  return arr.map(elem => !!elem)
+  return arr.map(elem => !!elem);
 }
-console.log(convertToBoolean([500, 0, "Francisco", "", []]))
+console.log(convertToBoolean([500, 0, "Francisco", "", []]));
 
 ///////////////////////// HARD CHALLENGES /////////////////////////
 console.log("/////// HARD CHALLENGES ///////");
+
+//  Q1. Show rating //
+//  Given a rating, display a star (*) for each full rating and a full-stop (.) 
+//  for each half rating.
+
+function showRating(rating) {
+  let ratings = "";
+  for (i = 0; i < Math.floor(rating); i++) {
+    ratings += "*";
+    if (i !== Math.floor(rating) - 1) {
+      ratings += " "
+    }
+  }
+  if (!Number.isInteger(rating)) {
+    ratings += " ."
+  }
+  return ratings
+}
+console.log(showRating(3));
+console.log(showRating(4.5));
+console.log(showRating(1.5));
+
+//  Q2. Sort by lowest to highest price //
+//  Given an array of numbers, return the prices sorted by low to high.
+
+function sortLowToHigh(prices) {
+  return prices.sort((a, b) => a - b)
+}
+console.log(sortLowToHigh([20, 40, 10, 30, 50, 10]));
+console.log(sortLowToHigh([5, 10, 0, -5]));
+console.log(sortLowToHigh([3, 2, 1, 0]));
+
+//  Q3. Sort by highest to lowest price //
+//  Given an array of objects, return the prices sorted by high to low.
+
+function sortHighToLow(prices) {
+  return prices.sort((a, b) => b.price - a.price)
+}
+console.log(sortHighToLow([
+  {id: 1, price: 50},
+  {id: 2, price: 30},
+  {id: 3, price: 60},
+  {id: 4, price: 10},
+]));
+
+//  Q5. Find all the posts by a single user //
+//  Call this API "https://jsonplaceholder.typicode.com/posts" and return all the posts
+//  by any given user Id.
+
+async function postsByUser(user) {
+  const promise = await fetch("https://jsonplaceholder.typicode.com/posts");
+
+  const result = await promise.json();  
+
+  const posts = result.filter(element => element.userId === user);
+
+  console.log(posts);
+}
+
+postsByUser(4);
+
+//  Q6. First 6 incomplete todos //
+//  Call this API "https://jsonplaceholder.typicode.com/todos" and return the first 6 
+//  imconplete todo's from the result.
+
+async function firstSixIncomplete(task) {
+  const promise = await fetch("https://jsonplaceholder.typicode.com/todos");
+  const result = await promise.json();
+  const incompleteTasks = result.filter(element => !element.completed).slice(0, 6);
+  console.log(incompleteTasks);
+}
+
+firstSixIncomplete(6);
