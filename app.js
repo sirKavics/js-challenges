@@ -184,3 +184,53 @@ console.log(lastElem([3, 2, 0, 6, 2]));
 console.log(lastElem(["dog", "cat", "ball"]));
 console.log(lastElem([null, 5, false]));
 
+//  Q4. Find the sum of an array  //
+//  Given an array, return the sum of every element.
+
+function arrSum(arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; ++i) {
+    sum = sum + arr[i];
+  }
+  return sum;
+}
+console.log(arrSum([2, 2, 2]));
+console.log(arrSum([100, 200, 500]));
+console.log(arrSum([0, -5, -10]));
+
+//  Q5. Add up the numbers from a single number  //
+//  Given a number, add up all the numbers from one to the number that is given.
+//  E.g. An input of 4 will give you 1 + 2 + 3 + 4, which equals 10.
+
+function progressiveSum(num) {
+  let sum = 0;
+  for (let i = 1; i <= num; ++i) {
+    sum = sum + i;
+  }
+  return sum;
+}
+console.log(progressiveSum(3));
+console.log(progressiveSum(4));
+console.log(progressiveSum(600));
+
+//  Q6. Calculate the time  //
+//  Given a number in seconds, return this number in mm:ss format.
+
+function calcTime(seconds) {
+  let timerSeconds = seconds % 60;
+  let timerMinutes = Math.floor(seconds /60);
+
+  if (timerMinutes.toString().length === 1) {
+    timerMinutes = "0" + timerMinutes;
+  }
+
+  if (timerSeconds.toString().length === 1) {
+    timerSeconds = '0' + timerSeconds;
+  }
+
+  return timerMinutes + ':' + timerSeconds;
+}
+console.log(calcTime(50));
+console.log(calcTime(66));
+console.log(calcTime(700));
+
