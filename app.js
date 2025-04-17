@@ -234,3 +234,76 @@ console.log(calcTime(50));
 console.log(calcTime(66));
 console.log(calcTime(700));
 
+//  Q7. Find the largest number  //
+//  Given an array of numbers, return the largest number of that array.
+
+function getMax(arr) {
+  let max = arr[0];
+
+  for (let i = 0; i < arr.length; ++i) {
+    if (arr[i] > max) {
+      max = arr[i];
+    }
+  }
+  return max;
+}
+console.log(getMax([5, 100, 0]));
+console.log(getMax([12, 10, -20]));
+console.log(getMax([-300, -100, -200]));
+
+//  Q8. Reverse a string  //
+//  Given a string, return the reverse string.
+
+//  INCREMENTING LOOP
+function reverseIncrementingString(string) {
+  let reversedString = '';
+  for (let i = 0; i < string.length; ++i) {
+    reversedString = string[i] + reversedString;
+  }
+  return reversedString;
+}
+console.log(reverseIncrementingString('abc'));
+console.log(reverseIncrementingString('Francisco'));
+console.log(reverseIncrementingString('This is cool'));
+
+//  DECREMENTING LOOP
+function reverseDecrementingString(string) {
+  let reversedString = '';
+  for (let i = string.length - 1; i >= 0; --i) {
+    reversedString = reversedString + string[i];
+  }
+  return reversedString;
+}
+console.log(reverseDecrementingString('def'));
+
+//  ARRAY REVERSE PROPERTY
+function reverseArrayProperty(string) {
+  return string.split('').reverse().join('');
+}
+console.log(reverseArrayProperty('ghi'));
+
+//  Q9. Turn every element in an array into 0  //
+//  Given an array of elements, return the same langth array filled with 0's.
+
+// FOR LOOP
+function convertToZerosLoop(arr) {
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    newArr[i] = 0;
+  }
+  return newArr;
+}
+console.log(convertToZerosLoop([5, 100, 0]));
+
+// ARRAY 'FILL'
+function convertToZerosFill(arr) {
+  return new Array(arr.length).fill(0)
+}
+console.log(convertToZerosFill([12, 2]));
+
+// ARRAY 'MAP'
+function convertToZerosMap(arr) {
+  return arr.map(elem => 0)
+}
+console.log(convertToZerosMap([1, 2, 3, 4, 5]));
+
