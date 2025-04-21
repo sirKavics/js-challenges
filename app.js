@@ -352,3 +352,46 @@ function filterOutFalsyFilter(arr) {
 }
 console.log(filterOutFalsyFilter(["", true, 0, null, 500, undefined, "0"]));
 
+//  Q12. Truthy to true, Falsy to false  //
+//  Given an array of truthy and falsy values, return the same array of elements 
+//  into it's boolean value.
+
+function convertToBoolean(arr) {
+  return arr.map(elem => !!elem);
+}
+console.log(convertToBoolean([500, 0, "Francisco", "", []]));
+
+///////////////////////// HARD CHALLENGES /////////////////////////
+console.log("/////// HARD CHALLENGES ///////");
+
+//  Q1. Show rating //
+//  Given a rating, display a star (*) for each full rating and a full-stop (.) 
+//  for each half rating.
+
+function showRating(rating) {
+  let ratings = "";
+  for (i = 0; i < Math.floor(rating); i++) {
+    ratings += "*";
+    if (i !== Math.floor(rating) - 1) {
+      ratings += " "
+    }
+  }
+  if (!Number.isInteger(rating)) {
+    ratings += " ."
+  }
+  return ratings
+}
+console.log(showRating(3));
+console.log(showRating(4.5));
+console.log(showRating(1.5));
+
+//  Q2. Sort by lowest to highest price //
+//  Given an array of numbers, return the prices sorted by low to high.
+
+function sortLowToHigh(prices) {
+  return prices.sort((a, b) => a - b)
+}
+console.log(sortLowToHigh([20, 40, 10, 30, 50, 10]));
+console.log(sortLowToHigh([5, 10, 0, -5]));
+console.log(sortLowToHigh([3, 2, 1, 0]));
+
